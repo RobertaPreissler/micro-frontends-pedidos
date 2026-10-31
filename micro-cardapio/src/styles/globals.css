@@ -1,0 +1,110 @@
+
+:root {
+  color-scheme: light;
+  --background: #f3f4f6;
+  --foreground: #1f2937;
+  --verde: #14532d;
+  --verde-hover: #166534;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Títulos dos microfrontends */
+.menu h2,
+.pedido h2 {
+  color: var(--verde) !important;
+  font-size: 25px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Cards do cardápio */
+.prato-card {
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  border: 1px solid #9ca3af !important;
+  border-radius: 12px !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12) !important;
+}
+
+.prato-card h3 {
+  color: var(--verde) !important;
+}
+
+.prato-card p {
+  color: #374151 !important;
+}
+
+.prato-card strong {
+  color: #111827 !important;
+  font-size: 19px !important;
+}
+
+.prato-card button {
+  background: var(--verde) !important;
+  color: #ffffff !important;
+  font-weight: bold !important;
+  border: none !important;
+}
+
+.prato-card button:hover {
+  background: var(--verde-hover) !important;
+}
+
+/* Área Meu Pedido */
+.pedido {
+  color: #1f2937 !important;
+}
+
+.pedido .vazio {
+  color: #4b5563 !important;
+}
+
+.pedido .item-pedido {
+  background: #f3f4f6 !important;
+  color: #1f2937 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.pedido .item-pedido strong {
+  color: var(--verde) !important;
+}
+
+.pedido .total-pedido {
+  background: var(--verde) !important;
+  color: #ffffff !important;
+}
+
+.pedido .total-pedido strong {
+  color: #ffffff !important;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 700px) {
+  .prato-card {
+    padding: 16px !important;
+  }
+}
