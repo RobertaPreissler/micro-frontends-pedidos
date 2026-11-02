@@ -40,3 +40,9 @@ a {
     color-scheme: dark;
   }
 }
+/* Layout responsivo para celulares */
+@media (max-width: 768px) {
+  main > div {
+    grid-template-columns: 1fr !important;
+  }
+}

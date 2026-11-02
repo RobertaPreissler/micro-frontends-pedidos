@@ -1,8 +1,15 @@
 import Head from 'next/head';
-import { lazy, Suspense } from 'react';
+import dynamic from 'next/dynamic';
 
-const Menu = lazy(() => import('cardapio/Menu'));
-const Pedido = lazy(() => import('pedido/Pedido'));
+const Menu = dynamic(() => import('cardapio/Menu'), {
+  ssr: false,
+  loading: () => <p>Carregando cardápio...</p>,
+});
+
+const Pedido = dynamic(() => import('pedido/Pedido'), {
+  ssr: false,
+  loading: () => <p>Carregando pedido...</p>,
+});
 
 export default function Home() {
   return (
@@ -41,9 +48,7 @@ export default function Home() {
           }}
         >
           <section>
-            <Suspense fallback={<p>Carregando cardápio...</p>}>
-              <Menu />
-            </Suspense>
+            <Menu />
           </section>
 
           <aside
@@ -54,9 +59,7 @@ export default function Home() {
               boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
             }}
           >
-            <Suspense fallback={<p>Carregando pedido...</p>}>
-              <Pedido />
-            </Suspense>
+            <Pedido />
           </aside>
         </div>
       </main>
